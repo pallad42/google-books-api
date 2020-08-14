@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".fragment.main.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/search_engine_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="@string/search_engine"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlined_text_field"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/search_field_label"
+            android:padding="10dp"
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/ic_baseline_search_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|textNoSuggestions" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="@string/search"
+            app:icon="@drawable/ic_baseline_search_24"
+            app:iconGravity="textStart" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="20dp"
+        android:background="@android:color/darker_gray" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="@string/advanced_settings"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="@string/filtering"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/filter_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/filter_partial_radio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                        android:gravity="center_horizontal|bottom"
+                        android:padding="5dp"
+                        android:text="@string/filter_partial" />
+
+                    <RadioButton
+                        android:id="@+id/filter_full_radio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                        android:gravity="center_horizontal|bottom"
+                        android:padding="5dp"
+                        android:text="@string/filter_full" />
+
+                    <RadioButton
+                        android:id="@+id/filter_free_ebooks_radio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                        android:gravity="center_horizontal|bottom"
+                        android:padding="5dp"
+                        android:text="@string/filter_free_ebooks" />
+
+                    <RadioButton
+                        android:id="@+id/filter_paid_ebooks_radio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                        android:gravity="center_horizontal|bottom"
+                        android:padding="5dp"
+                        android:text="@string/filter_paid_ebooks" />
+
+                    <RadioButton
+                        android:id="@+id/filter_ebooks_radio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                        android:gravity="center_horizontal|bottom"
+                        android:padding="5dp"
+                        android:text="@string/filter_ebooks" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="@string/order_by"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/order_by_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/order_by_relevance_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                        android:gravity="center_horizontal|bottom"
+                        android:padding="5dp"
+                        android:text="@string/order_by_relevance" />
+
+                    <RadioButton
+                        android:id="@+id/order_by_newest_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                        android:gravity="center_horizontal|bottom"
+                        android:padding="5dp"
+                        android:text="@string/order_by_newest" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="@string/print_type"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/print_type_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/print_type_all_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                        android:gravity="center_horizontal|bottom"
+                        android:padding="5dp"
+                        android:text="@string/print_type_all" />
+
+                    <RadioButton
+                        android:id="@+id/print_type_books_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                        android:gravity="center_horizontal|bottom"
+                        android:padding="5dp"
+                        android:text="@string/print_type_books" />
+
+                    <RadioButton
+                        android:id="@+id/print_type_magazines_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                        android:gravity="center_horizontal|bottom"
+                        android:padding="5dp"
+                        android:text="@string/print_type_magazines" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

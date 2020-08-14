@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <TextView
+        android:id="@+id/connection_status_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff0000"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/disconnected"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLightGray"
+        app:itemIconTint="@drawable/nav_bottom_selector"
+        app:itemTextColor="@drawable/nav_bottom_selector"
+        app:menu="@menu/nav_bottom_menu" />
+
+</LinearLayout>
